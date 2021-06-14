@@ -36,10 +36,10 @@ void MainWindow::gen_case_config(void) {
         this->check_boxes.append(cb);
 
         QPushButton *pb = new QPushButton(this->cases[i], this);
-        pb->setFixedSize(85, 50);
+        pb->setFixedSize(85, 40);
+        pb->setStyleSheet("color: white; background-color: #27a9e3; border-width: 0px; border-radius: 3px;");
         QMenu *s_menu = new QMenu(this);
-        s_menu->addAction("配置", this, &MainWindow::gen_subwidget_clicked);
-        s_menu->addAction("测试");
+        s_menu->addAction("测试项配置", this, &MainWindow::gen_subwidget_clicked);
         pb->setMenu(s_menu);
         vbox->addWidget(pb);
         this->pb_cases.append(pb);
@@ -69,8 +69,11 @@ void MainWindow::on_pb_apply_clicked()
     int i;
     for (i = 0; i < this->cases.size(); i++) {
         if (this->check_boxes[i]->checkState() == Qt::Checked) {
+            this->pb_cases[i]->setStyleSheet("color: white; background-color: #27a9e3; \
+               border-width: 0px; border-radius: 3px;");
             this->pb_cases[i]->setEnabled(true);
         } else {
+            this->pb_cases[i]->setStyleSheet("background-color: #cfcfcf; border-width: 0px; border-radius: 3px;");
             this->pb_cases[i]->setEnabled(false);
         }
     }

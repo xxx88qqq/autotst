@@ -250,7 +250,25 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QTextBrowser" name="textBrowser"/>
+           <widget class="QGroupBox" name="groupBox_log">
+            <property name="title">
+             <string>日志信息</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QTextBrowser" name="textBrowser">
+               <property name="styleSheet">
+                <string notr="true">border-width: 0px;
+border-style:outset;
+</string>
+               </property>
+               <property name="lineWidth">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
