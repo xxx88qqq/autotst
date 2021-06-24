@@ -21,6 +21,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void load_style_sheet(const QString &sheetname);
     void gen_case_config(void);
+    void run(void);
+    void printMessage(QString message);
+
     ~MainWindow();
 
 private slots:
@@ -31,6 +34,8 @@ private slots:
     void on_pb_reset_clicked();
 
     void on_pb_apply_clicked();
+
+    void on_pb_start_clicked();
 
 private:
     Ui::MainWindow *ui;
