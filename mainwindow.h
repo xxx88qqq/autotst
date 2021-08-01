@@ -7,6 +7,8 @@
 #include <QCheckBox>
 #include <QPushButton>
 #include <QMenu>
+#include <QGraphicsView>
+#include <QFileDialog>
 #include "subwidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +23,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void load_style_sheet(const QString &sheetname);
     void gen_case_config(void);
+    void add_graphics_view(void);
     void run(void);
     void printMessage(QString message);
 
@@ -37,6 +40,10 @@ private slots:
 
     void on_pb_start_clicked();
 
+    void on_toolButton_clicked();
+
+    void on_toolButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     subwidget subwgt;
@@ -45,5 +52,9 @@ private:
     QList<QCheckBox *> check_boxes;
     QList<QPushButton *> pb_cases;
     QList<QMenu *> menu_cases;
+    QGraphicsScene scene1, scene2, scene3, scene4;
+    QGraphicsView view1, view2, view3, view4;
+    QString intpath;
+    QString wavpath;
 };
 #endif // MAINWINDOW_H
